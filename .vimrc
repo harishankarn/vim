@@ -1,5 +1,6 @@
 syntax enable
 filetype plugin indent on
+autocmd VimEnter * lcd ~
 
 " Enable smart indentation
 set smartindent

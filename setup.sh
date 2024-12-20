@@ -10,11 +10,10 @@ check_vim_installed() {
   if ! command -v vim &> /dev/null; then
     echo "Vim is not installed."
     echo "For Ubuntu/Debian-based systems, run:"
+    echo "---------------------------"
     echo "sudo apt update && sudo apt install vim -y"
-    echo "———————————————————"
     echo "For macOS, run:"
     echo "sudo brew install vim"
-    echo "———————————————————"
     echo "Script cannot proceed without Vim. Exiting."
     exit 1
   else
@@ -32,14 +31,16 @@ remove_existing_config() {
 # Function to setup .vim and .vimrc
 setup_vim() {
   echo "Setting up .vim and .vimrc..."
-  cp "./.vimrc" "$HOME/"
-  cp -r "./.vim" "$HOME/"
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+  cp "$SCRIPT_DIR/.vimrc" "$HOME/"
+  cp -r "$SCRIPT_DIR/.vim" "$HOME/"
 }
+
 
 # Function to install Vim plugins using vim-plug
 install_plugins() {
   echo "Installing Vim plugins..."
-  vim +PlugInstall +qall
+  vim -c "cd ~" +PlugInstall +qall
 }
 
 # Start setup

@@ -1,0 +1,5 @@
+{
+  "clangd.diagnostics.signThreshold": 0,
+  "diagnostic.displayByAle": true
+}
+

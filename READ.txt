@@ -1,7 +1,0 @@
-Steps to follow:
-1. Replace the .vimrc file(~/.vimrc) in computer to the one in this folder
-2. Replace the .vim file(~/.vim) in computer to the one in this folder
-3. Make sure all the plugins are installed for it to work or use ":PlugInstall" to install the files 
-   NOTE:
-   Make sure node.js is installed for coc.vim to work
-4. Theme(dracula) is already in the .vim/pack folder 
